@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Legion — real vaqtli strategiya</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <div id="view">
+    <canvas id="game"></canvas>
+    <div id="toasts"></div>
+    <div id="pause" class="veil"><div class="big">PAUZA</div><div class="dim">Davom etish uchun P</div></div>
+  </div>
+  <aside id="side">
+    <div class="brand">LEGION</div>
+    <div class="money"><span class="lbl">Mablag'</span><span id="credits">0</span></div>
+    <div id="power"><div class="row"><span class="lbl">Energiya</span><span id="powTxt">0 / 0</span></div>
+      <div class="bar"><i id="powProd"></i><i id="powUse"></i></div></div>
+    <canvas id="mini" width="256" height="128"></canvas>
+    <div class="tabs">
+      <button class="tab" data-tab="b">Binolar<kbd>Q</kbd></button>
+      <button class="tab" data-tab="i">Piyoda<kbd>W</kbd></button>
+      <button class="tab" data-tab="v">Texnika<kbd>E</kbd></button>
+    </div>
+    <div id="grid"></div>
+    <div id="info"></div>
+    <div class="tools">
+      <button id="bSell" title="Binoni sotish (50%)">Sotish</button>
+      <button id="bPause">Pauza</button>
+      <button id="bSound">Ovoz</button>
+      <button id="bMenu">Menyu</button>
+    </div>
+  </aside>
+</div>
+
+<div id="menu" class="veil show">
+  <div class="card">
+    <h1>LEGION</h1>
+    <p class="sub">Real vaqtli strategiya — baza qur, ruda yig', dushmanni yo'q qil</p>
+    <div class="diffs">
+      <button class="diff" data-d="0">Oson</button>
+      <button class="diff on" data-d="1">O'rta</button>
+      <button class="diff" data-d="2">Qiyin</button>
+    </div>
+    <button id="start">Jangni boshlash</button>
+    <ul class="help">
+      <li><b>Chap tugma</b> — tanlash, ramka bilan guruh tanlash; ikki marta bosish — shu turdagi hammasi</li>
+      <li><b>O'ng tugma</b> — yurish / hujum / ruda yig'ish / yig'ilish nuqtasi</li>
+      <li><b>A</b> — hujum bilan yurish, <b>S</b> — to'xtash, <b>H</b> — bazaga qaytish</li>
+      <li><b>Strelkalar</b> yoki ekran chetlari — kamera; <b>Ctrl+1…9</b> — guruh, <b>1…9</b> — chaqirish</li>
+      <li>Paneldagi <b>o'ng tugma</b> — buyurtmani bekor qilish; <b>Del</b> — binoni sotish; <b>P</b> — pauza</li>
+    </ul>
+  </div>
+</div>
+<div id="end" class="veil">
+  <div class="card">
+    <h1 id="endTitle"></h1>
+    <p class="sub" id="endStats"></p>
+    <button id="again">Yana o'ynash</button>
+  </div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/map.js"></script>
+<script src="js/sim.js"></script>
+<script src="js/ai.js"></script>
+<script src="js/render.js"></script>
+<script src="js/ui.js"></script>
+</body>
+</html>
